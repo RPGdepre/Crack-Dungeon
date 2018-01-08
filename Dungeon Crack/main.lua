@@ -16,7 +16,7 @@ function love.update(dt)
     tutorial_update()
   elseif status == 'game' then
     game_update()
-  elseif status == 'endbad' or status == 'endhappy' then
+  elseif status == 'endbad' or status == 'endhappy' or status == 'endfuga' then
     end_update()
   end
 end
@@ -27,7 +27,7 @@ function love.draw()
     tutorial_draw()
   elseif status == 'game' then
     game_draw()
-  elseif status == 'endbad' or status == 'endhappy' then
+  elseif status == 'endbad' or status == 'endhappy' or status == 'endfuga' then
     end_draw()
   end
 end

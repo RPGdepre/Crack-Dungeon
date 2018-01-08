@@ -6,9 +6,6 @@ require "Cod/Game/moviment_and_combat"
 require "Cod/Game/images"
 require "Cod/Game/reset"
 require "Cod/Game/historia"
-nivel=1
-parte=0
-reset=false
 function game_load()
   images_load()
   player_load()
@@ -36,13 +33,11 @@ function game_update()
   end
   if not player.live or parte == 25 then
     status='endbad'
-    reset=true
   end
   if parte == 3 then
     function love.keypressed(key)
       if key == '1' then
-        status = 'endbad'
-        reset=true
+        status = 'endfuga'
       elseif key == '2' then
         parte = parte+1
       end
@@ -51,8 +46,7 @@ function game_update()
   if parte == 12 then
     function love.keypressed(key)
       if key == '1' then
-        status = 'endbad'
-        reset=true
+        status = 'endfuga'
       elseif key == '2' then
         parte = parte+1
       end
@@ -62,7 +56,6 @@ function game_update()
     function love.keypressed(key)
       if key == '1' then
         status = 'endhappy'
-        reset=true
       elseif key == '2' then
         parte = parte+1
       end

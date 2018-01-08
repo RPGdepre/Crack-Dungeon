@@ -1,4 +1,5 @@
 function reset_update()
+  nivel=1
   player.skin=love.graphics.newImage('Cod/Game/Skins/player.png')
   player.life=100
   player.live=true
@@ -25,7 +26,5 @@ function reset_update()
   heroina3.exist=true
   heroina3.loot=false
   heroina3.skin=love.graphics.newImage('Cod/Game/Skins/heroina.png')
-  nivel=1
-  parte=0
   game_load()
 end
