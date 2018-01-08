@@ -78,7 +78,7 @@ function game_draw()
     images_draw()
     nivel2_draw()
     player_draw()
-  elseif parte <= 14 then
+  elseif parte <= 20 then
     historia3_draw()
   elseif parte == 21 then
     images_draw()

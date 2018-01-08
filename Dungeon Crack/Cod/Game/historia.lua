@@ -11,7 +11,7 @@ function historia_update()
         parte = parte+1
       end
     end
-  elseif parte >= 14 and parte <= 19 then
+  elseif parte > 13 and parte <= 19 then
     function love.keypressed(key)
       if key == 'space' then
         parte = parte+1
