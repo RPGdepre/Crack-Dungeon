@@ -30,10 +30,6 @@ function player_update()
   if player.life <= 0 then
     player.live=false
   end
-  if player.heroina > 0 and love.keyboard.isDown('c') then
-    player.life=player.life + 25
-    player.heroina=player.heroina-1
-  end
 end
 function player_draw()
   love.graphics.draw(player.skin, player.x, player.y)

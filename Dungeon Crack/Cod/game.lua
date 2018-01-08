@@ -5,7 +5,9 @@ require "Cod/Game/personagem"
 require "Cod/Game/moviment_and_combat"
 require "Cod/Game/images"
 require "Cod/Game/reset"
+require "Cod/Game/historia"
 nivel=1
+parte=0
 reset=false
 function game_load()
   images_load()
@@ -15,37 +17,78 @@ function game_load()
   nivel3_load()
 end
 function game_update()
-  if nivel == 1 then
+  historia_update()
+  if parte == 4 then
+    player_update()
     nivel1_update()
     moviment_and_combat_update1()
-  elseif nivel == 2 then
+  elseif parte == 13 then
+    player_update()
     nivel2_update()
     moviment_and_combat_update2()
-  elseif nivel == 3 then
+  elseif parte == 21 then
+    player_update()
     nivel3_update()
     moviment_and_combat_update3()
   end
   if reset then
     reset_update()
   end
-  player_update()
-  if not player.live then
+  if not player.live or parte == 25 then
     status='endbad'
     reset=true
   end
-  if nivel > 3 then
-    status='endhappy'
-    reset=true
+  if parte == 3 then
+    function love.keypressed(key)
+      if key == '1' then
+        status = 'endbad'
+        reset=true
+      elseif key == '2' then
+        parte = parte+1
+      end
+    end
+  end
+  if parte == 12 then
+    function love.keypressed(key)
+      if key == '1' then
+        status = 'endbad'
+        reset=true
+      elseif key == '2' then
+        parte = parte+1
+      end
+    end
+  end
+  if parte ==22 then
+    function love.keypressed(key)
+      if key == '1' then
+        status = 'endhappy'
+        reset=true
+      elseif key == '2' then
+        parte = parte+1
+      end
+    end
   end
 end
 function game_draw()
-  images_draw()
-    if nivel == 1 then
-      nivel1_draw()
-    elseif nivel == 2 then
-      nivel2_draw()
-    elseif nivel == 3 then
-      nivel3_draw()
-    end
-  player_draw()
+  if parte <= 3 then
+    historia1_draw()
+  elseif parte == 4 then
+    images_draw()
+    nivel1_draw()
+    player_draw()
+  elseif parte <= 12 then
+    historia2_draw()
+  elseif parte == 13 then
+    images_draw()
+    nivel2_draw()
+    player_draw()
+  elseif parte <= 14 then
+    historia3_draw()
+  elseif parte == 21 then
+    images_draw()
+    nivel3_draw()
+    player_draw()
+  elseif parte <= 22 then
+    historia4_draw()
+  end
 end

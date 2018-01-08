@@ -59,8 +59,9 @@ function nivel2_update()
   if enemy2.y > 448 then
     enemy2.y = 448
   end
-  if player.x == passnivel2.x and player.y == passnivel2.y and love.keyboard.isDown('space') then
+  if player.x == passnivel2.x and player.y == passnivel2.y and love.keyboard.isDown('space') and enemy2.life <= 0 then
     nivel=nivel+1
+    parte=parte+1
   end
   if enemy2.life <= 0 then
     enemy2.skin = map

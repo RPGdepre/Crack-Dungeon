@@ -1,6 +1,10 @@
 function moviment_and_combat_update1()
   function love.keypressed(key)
     if player.live then
+      if player.heroina > 0 and key == 'c' then
+        player.life=player.life + 25
+        player.heroina=player.heroina-1
+      end
       if key == 'w' or key == 's' or key == 'a' or key == 'd' or key == 'space' then
         if key == 'w' then
           player.y=player.y-32
@@ -86,6 +90,10 @@ end
 function moviment_and_combat_update2()
   function love.keypressed(key)
     if player.live then
+      if player.heroina > 0 and key == 'c' then
+        player.life=player.life + 25
+        player.heroina=player.heroina-1
+      end
       if key == 'w' or key == 's' or key == 'a' or key == 'd' or key == 'space' then
         if key == 'w' then
           player.y=player.y-32
@@ -171,6 +179,10 @@ end
 function moviment_and_combat_update3()
   function love.keypressed(key)
     if player.live then
+      if player.heroina > 0 and key == 'c' then
+        player.life=player.life + 25
+        player.heroina=player.heroina-1
+      end
       if key == 'w' or key == 's' or key == 'a' or key == 'd' or key == 'space' then
         if key == 'w' then
           player.y=player.y-32

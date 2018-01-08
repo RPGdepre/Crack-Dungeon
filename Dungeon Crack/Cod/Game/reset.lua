@@ -26,5 +26,6 @@ function reset_update()
   heroina3.loot=false
   heroina3.skin=love.graphics.newImage('Cod/Game/Skins/heroina.png')
   nivel=1
+  parte=0
   game_load()
 end
