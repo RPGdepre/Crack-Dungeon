@@ -59,8 +59,8 @@ function nivel3_update()
   if enemy3.y > 448 then
     enemy3.y = 448
   end
-  if player.x == passnivel3.x and player.y == passnivel3.y and love.keyboard.isDown('space') and enemy3.life < 0 then
-    nivel=nivel+1
+  if player.x == passnivel3.x and player.y == passnivel3.y and love.keyboard.isDown('space') and enemy3.life <= 0 then
+    nivel = nivel+1
     parte = parte+1
   end
   if enemy3.life <= 0 then
