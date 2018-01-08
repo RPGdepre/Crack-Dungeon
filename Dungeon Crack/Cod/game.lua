@@ -6,6 +6,7 @@ require "Cod/Game/moviment_and_combat"
 require "Cod/Game/images"
 require "Cod/Game/reset"
 require "Cod/Game/historia"
+nivel=1
 function game_load()
   images_load()
   player_load()
