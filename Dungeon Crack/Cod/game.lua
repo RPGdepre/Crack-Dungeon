@@ -6,7 +6,6 @@ require "Cod/Game/moviment_and_combat"
 require "Cod/Game/images"
 require "Cod/Game/reset"
 require "Cod/Game/historia"
-nivel=1
 function game_load()
   images_load()
   player_load()
@@ -17,14 +16,17 @@ end
 function game_update()
   historia_update()
   if parte == 4 then
+    nivel=1
     player_update()
     nivel1_update()
     moviment_and_combat_update1()
   elseif parte == 13 then
+    nivel=2
     player_update()
     nivel2_update()
     moviment_and_combat_update2()
   elseif parte == 21 then
+    nivel=3
     player_update()
     nivel3_update()
     moviment_and_combat_update3()
