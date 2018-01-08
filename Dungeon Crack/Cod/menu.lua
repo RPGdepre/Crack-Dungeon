@@ -2,12 +2,12 @@ function menu_load()
   mainmenu=love.graphics.newImage('Cod/Game/Skins/menu.png')
 end
 function menu_update()
-    parte=0
-    reset=true
+  reset=true
+  parte=0
   function love.keypressed(key)
     if key == '1' then
-      reset=false
       status = 'game'
+      reset=false
     elseif key == '2' then
       status = 'tutorial'
     elseif key == '3' then

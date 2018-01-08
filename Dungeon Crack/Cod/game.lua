@@ -4,7 +4,6 @@ require "Cod/Game/nivel3"
 require "Cod/Game/personagem"
 require "Cod/Game/moviment_and_combat"
 require "Cod/Game/images"
-require "Cod/Game/reset"
 require "Cod/Game/historia"
 function game_load()
   images_load()
@@ -30,9 +29,6 @@ function game_update()
     player_update()
     nivel3_update()
     moviment_and_combat_update3()
-  end
-  if reset then
-    reset_update()
   end
   if not player.live or parte == 25 then
     status='endbad'

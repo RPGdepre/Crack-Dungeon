@@ -2,6 +2,7 @@ require "Cod/game"
 require "Cod/menu"
 require "Cod/end"
 require "Cod/tutorial"
+require "Cod/Game/reset"
 status='main'
 function love.load(arg)
   menu_load()
@@ -10,6 +11,9 @@ function love.load(arg)
   tutorial_load()
 end
 function love.update(dt)
+  if reset then
+    reset_update()
+  end
   if status == 'main' then
     menu_update()
   elseif status == 'tutorial' then
